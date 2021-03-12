@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 public class ChildActivity extends AppCompatActivity {
 
+    //Again we prepare our objects
     String anyString;
     TextView myTxtViewMgr;
     Intent intentReceiver;
@@ -18,7 +19,12 @@ public class ChildActivity extends AppCompatActivity {
         setContentView(R.layout.activity_child);
 
         myTxtViewMgr = findViewById(R.id.textView2);
+
+        //We acquire control of the Intent currently alive
         intentReceiver = getIntent();
+
+        //To extract the Extras, the method is NOT overloadad. You need to use
+        //the specific get<Datatype>Extra method. In the example: getStringExtra
         myTxtViewMgr.setText(intentReceiver.getStringExtra("myExtra"));
 
     }
